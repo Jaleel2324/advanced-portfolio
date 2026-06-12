@@ -1,12 +1,22 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
 import { Send } from "lucide-react";
 
 function ContactForm() {
   const [status, setStatus] = useState("");
+  const [captchaVerified, setCaptchaVerified] = useState(false);
+
+  const recaptchaRef = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!captchaVerified) {
+      setStatus("Please complete the reCAPTCHA verification.");
+      return;
+    }
+
     setStatus("Sending...");
 
     emailjs
@@ -19,6 +29,9 @@ function ContactForm() {
       .then(() => {
         setStatus("Message sent successfully!");
         e.target.reset();
+
+        recaptchaRef.current?.reset();
+        setCaptchaVerified(false);
       })
       .catch(() => {
         setStatus("Something went wrong. Try again.");
@@ -118,6 +131,15 @@ function ContactForm() {
             required
             className="w-full px-5 py-4 rounded-xl bg-black/40 border border-white/10 outline-none focus:border-[#EF233C] resize-none transition"
           />
+
+          <div className="flex justify-center">
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+              onChange={() => setCaptchaVerified(true)}
+              onExpired={() => setCaptchaVerified(false)}
+            />
+          </div>
 
           <button
             type="submit"
