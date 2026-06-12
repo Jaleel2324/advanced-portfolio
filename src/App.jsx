@@ -6,6 +6,7 @@ import Services from "./components/Services";
 import VideoShowcase from "./components/VideoShowcase";
 import Booking from "./components/Booking";
 import Pricing from "./components/Pricing";
+import TrustBar from "./components/TrustBar";
 import Reviews from "./components/Reviews";
 import FAQ from "./components/FAQ";
 import FinalCTA from "./components/FinalCTA";
@@ -27,7 +28,7 @@ function App() {
       {/* Main 3D background */}
       <SplineBackground />
 
-      {/* Cursor glow stays on top of the background */}
+      {/* Cursor glow */}
       <CursorGlow />
 
       <Navbar />
@@ -57,9 +58,9 @@ function App() {
             </h2>
 
             <p className="text-gray-400 max-w-3xl text-lg">
-              Premium applications, AI systems, business platforms, dashboards,
-              and full-stack experiences designed to showcase technical skill
-              and solve real-world problems.
+              Premium applications, AI systems, business platforms,
+              dashboards, and full-stack experiences designed to showcase
+              technical skill and solve real-world problems.
             </p>
           </div>
 
@@ -127,6 +128,10 @@ function App() {
       </SectionReveal>
 
       <SectionReveal>
+        <TrustBar />
+      </SectionReveal>
+
+      <SectionReveal>
         <Reviews />
       </SectionReveal>
 
@@ -181,8 +186,8 @@ function App() {
           </div>
 
           <div className="mt-12 pt-8 border-t border-white/10 text-center text-gray-500">
-            © 2026 Jaleel.dev — Built with React, Tailwind CSS, Framer Motion,
-            Calendly, EmailJS & Stripe
+            © 2026 Jaleel.dev — Built with React, Tailwind CSS,
+            Framer Motion, Calendly, EmailJS & Stripe
           </div>
         </div>
       </footer>
