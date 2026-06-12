@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+import DigitalCoreHero from "./components/DigitalCoreHero";
 import About from "./components/About";
 import Services from "./components/Services";
 import VideoShowcase from "./components/VideoShowcase";
@@ -10,24 +10,29 @@ import Reviews from "./components/Reviews";
 import FAQ from "./components/FAQ";
 import FinalCTA from "./components/FinalCTA";
 import ContactForm from "./components/ContactForm";
-import BackgroundFX from "./components/BackgroundFX";
 import CursorGlow from "./components/CursorGlow";
 import ProjectModal from "./components/ProjectModal";
 import Loader from "./components/Loader";
 import SectionReveal from "./components/SectionReveal";
+import SplineBackground from "./components/SplineBackground";
 import { projects } from "./data/projects";
 
 function App() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
-    <main className="relative min-h-screen bg-[#05010F] text-white overflow-hidden">
+    <main className="relative min-h-screen bg-[#020304] text-white overflow-hidden">
       <Loader />
-      <BackgroundFX />
+
+      {/* Main 3D background */}
+      <SplineBackground />
+
+      {/* Cursor glow stays on top of the background */}
       <CursorGlow />
 
       <Navbar />
-      <Hero />
+
+      <DigitalCoreHero />
 
       <SectionReveal>
         <About />
@@ -43,11 +48,11 @@ function App() {
           className="relative z-10 px-6 py-24 max-w-7xl mx-auto"
         >
           <div className="mb-14">
-            <p className="text-purple-400 uppercase tracking-[0.3em] mb-4">
+            <p className="text-[#EF233C] uppercase tracking-[0.3em] mb-4">
               Featured Work
             </p>
 
-            <h2 className="text-5xl md:text-6xl font-black mb-6">
+            <h2 className="text-5xl md:text-6xl font-black mb-6 text-white">
               Projects Built To Impress Clients
             </h2>
 
@@ -62,7 +67,7 @@ function App() {
             {projects.map((project) => (
               <div
                 key={project.title}
-                className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden transition-all duration-300 hover:border-purple-500/30 hover:bg-white/10 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/10"
+                className="rounded-3xl border border-white/10 bg-[#090B0F]/75 backdrop-blur-xl overflow-hidden transition-all duration-300 hover:border-[#EF233C]/30 hover:bg-[#090B0F]/95 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#EF233C]/10"
               >
                 <div className="aspect-video bg-black overflow-hidden">
                   <img
@@ -73,11 +78,11 @@ function App() {
                 </div>
 
                 <div className="p-8">
-                  <p className="text-purple-400 mb-3 font-medium">
+                  <p className="text-[#EF233C] mb-3 font-medium">
                     {project.category}
                   </p>
 
-                  <h3 className="text-2xl font-bold mb-4">
+                  <h3 className="text-2xl font-bold mb-4 text-white">
                     {project.title}
                   </h3>
 
@@ -89,7 +94,7 @@ function App() {
                     {project.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 rounded-full text-sm border border-purple-400/20 bg-purple-500/10 text-purple-200"
+                        className="px-3 py-1 rounded-full text-sm border border-[#EF233C]/20 bg-[#EF233C]/10 text-red-200"
                       >
                         {tech}
                       </span>
@@ -98,7 +103,7 @@ function App() {
 
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="mt-8 w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-700 transition font-semibold"
+                    className="mt-8 w-full py-3 rounded-xl bg-[#EF233C] hover:bg-[#FF4D6D] transition font-semibold text-white shadow-lg shadow-[#EF233C]/20"
                   >
                     View Project
                   </button>
@@ -137,18 +142,24 @@ function App() {
         <ContactForm />
       </SectionReveal>
 
-      <footer className="relative z-10 border-t border-white/10 mt-20">
+      <footer className="relative z-10 border-t border-white/10 mt-20 bg-[#090B0F]/80 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="grid md:grid-cols-3 gap-10">
             <div>
-              <h3 className="text-2xl font-bold mb-3">Jaleel.dev</h3>
+              <h3 className="text-2xl font-bold mb-3 text-white">
+                Jaleel.dev
+              </h3>
+
               <p className="text-gray-400">
                 Frontend Developer • Full Stack Developer • AI Builder
               </p>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Contact</h4>
+              <h4 className="font-semibold mb-4 text-white">
+                Contact
+              </h4>
+
               <div className="space-y-2 text-gray-400">
                 <p>616-516-3416</p>
                 <p>jaleelpips@gmail.com</p>
@@ -156,7 +167,10 @@ function App() {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Services</h4>
+              <h4 className="font-semibold mb-4 text-white">
+                Services
+              </h4>
+
               <div className="space-y-2 text-gray-400">
                 <p>Starter Websites - $500</p>
                 <p>Business Websites - $1,500</p>

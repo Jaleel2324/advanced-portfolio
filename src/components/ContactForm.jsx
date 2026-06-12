@@ -32,7 +32,7 @@ function ContactForm() {
     >
       <div className="grid lg:grid-cols-2 gap-12">
         <div>
-          <p className="text-blue-400 uppercase tracking-[0.3em] mb-4">
+          <p className="text-[#EF233C] uppercase tracking-[0.3em] mb-4">
             Contact
           </p>
 
@@ -47,12 +47,12 @@ function ContactForm() {
 
           <div className="mt-8 space-y-3 text-gray-300">
             <p>
-              <span className="text-blue-400 font-semibold">Email:</span>{" "}
+              <span className="text-[#EF233C] font-semibold">Email:</span>{" "}
               jaleelpips@gmail.com
             </p>
 
             <p>
-              <span className="text-blue-400 font-semibold">Phone:</span>{" "}
+              <span className="text-[#EF233C] font-semibold">Phone:</span>{" "}
               616-516-3416
             </p>
           </div>
@@ -60,14 +60,14 @@ function ContactForm() {
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 space-y-5"
+          className="rounded-3xl border border-white/10 bg-[#090B0F]/80 backdrop-blur-xl p-8 space-y-5"
         >
           <input
             name="name"
             type="text"
             placeholder="Your Name"
             required
-            className="w-full px-5 py-4 rounded-xl bg-black/40 border border-white/10 outline-none focus:border-blue-400"
+            className="w-full px-5 py-4 rounded-xl bg-black/40 border border-white/10 outline-none focus:border-[#EF233C] transition"
           />
 
           <input
@@ -75,20 +75,20 @@ function ContactForm() {
             type="email"
             placeholder="Email Address"
             required
-            className="w-full px-5 py-4 rounded-xl bg-black/40 border border-white/10 outline-none focus:border-blue-400"
+            className="w-full px-5 py-4 rounded-xl bg-black/40 border border-white/10 outline-none focus:border-[#EF233C] transition"
           />
 
           <input
             name="company"
             type="text"
             placeholder="Company / Brand Name"
-            className="w-full px-5 py-4 rounded-xl bg-black/40 border border-white/10 outline-none focus:border-blue-400"
+            className="w-full px-5 py-4 rounded-xl bg-black/40 border border-white/10 outline-none focus:border-[#EF233C] transition"
           />
 
           <select
             name="project_type"
             required
-            className="w-full px-5 py-4 rounded-xl bg-black/40 border border-white/10 outline-none focus:border-blue-400 text-gray-400"
+            className="w-full px-5 py-4 rounded-xl bg-black/40 border border-white/10 outline-none focus:border-[#EF233C] text-gray-400 transition"
           >
             <option value="">Project Type</option>
             <option>Portfolio Website</option>
@@ -102,7 +102,7 @@ function ContactForm() {
           <select
             name="budget"
             required
-            className="w-full px-5 py-4 rounded-xl bg-black/40 border border-white/10 outline-none focus:border-blue-400 text-gray-400"
+            className="w-full px-5 py-4 rounded-xl bg-black/40 border border-white/10 outline-none focus:border-[#EF233C] text-gray-400 transition"
           >
             <option value="">Estimated Budget</option>
             <option>$500 - $1,000</option>
@@ -116,12 +116,12 @@ function ContactForm() {
             rows="6"
             placeholder="Tell me about your project..."
             required
-            className="w-full px-5 py-4 rounded-xl bg-black/40 border border-white/10 outline-none focus:border-blue-400 resize-none"
+            className="w-full px-5 py-4 rounded-xl bg-black/40 border border-white/10 outline-none focus:border-[#EF233C] resize-none transition"
           />
 
           <button
             type="submit"
-            className="w-full py-4 rounded-xl bg-blue-600 hover:bg-blue-700 transition font-semibold flex items-center justify-center gap-2"
+            className="w-full py-4 rounded-xl bg-[#EF233C] hover:bg-[#FF4D6D] transition font-semibold flex items-center justify-center gap-2 text-white shadow-lg shadow-[#EF233C]/20"
           >
             Submit Inquiry <Send size={18} />
           </button>
@@ -132,7 +132,7 @@ function ContactForm() {
                 status.includes("successfully")
                   ? "border-green-400/30 bg-green-500/10 text-green-300"
                   : status.includes("Sending")
-                  ? "border-blue-400/30 bg-blue-500/10 text-blue-300"
+                  ? "border-[#EF233C]/30 bg-[#EF233C]/10 text-red-300"
                   : "border-red-400/30 bg-red-500/10 text-red-300"
               }`}
             >

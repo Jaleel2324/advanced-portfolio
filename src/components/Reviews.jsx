@@ -43,20 +43,25 @@ function Reviews() {
   return (
     <section className="relative z-10 px-6 py-24 max-w-7xl mx-auto">
       <div className="text-center mb-14">
-        <p className="text-purple-400 uppercase tracking-[0.3em] mb-4">
+        <p className="text-[#EF233C] uppercase tracking-[0.3em] mb-4">
           Testimonials
         </p>
 
         <h2 className="text-5xl md:text-6xl font-black mb-6">
           Built To Earn Client Trust
         </h2>
+
+        <p className="text-gray-400 max-w-3xl mx-auto text-lg">
+          Every project is focused on creating professional experiences that
+          help businesses build credibility, attract customers, and grow online.
+        </p>
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {reviews.map((review) => (
           <div
             key={review.name}
-            className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 hover:bg-white/10 hover:-translate-y-2 hover:border-purple-500/30 transition"
+            className="rounded-3xl border border-white/10 bg-[#090B0F]/75 backdrop-blur-xl p-8 hover:bg-[#090B0F]/95 hover:-translate-y-2 hover:border-[#EF233C]/30 transition-all duration-300"
           >
             <div className="flex gap-1 mb-6">
               {[...Array(5)].map((_, index) => (
@@ -66,8 +71,8 @@ function Reviews() {
                   fill={index < review.rating ? "currentColor" : "none"}
                   className={
                     index < review.rating
-                      ? "text-purple-400"
-                      : "text-gray-600"
+                      ? "text-[#EF233C]"
+                      : "text-gray-700"
                   }
                 />
               ))}
@@ -77,9 +82,14 @@ function Reviews() {
               “{review.text}”
             </p>
 
-            <div>
-              <h3 className="font-bold text-white">{review.name}</h3>
-              <p className="text-gray-500 text-sm">{review.role}</p>
+            <div className="pt-5 border-t border-white/10">
+              <h3 className="font-bold text-white">
+                {review.name}
+              </h3>
+
+              <p className="text-gray-500 text-sm">
+                {review.role}
+              </p>
             </div>
           </div>
         ))}

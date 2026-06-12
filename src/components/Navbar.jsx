@@ -15,11 +15,11 @@ function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 border-b border-purple-900/30 bg-[#04010A]/95 backdrop-blur-xl">
+    <nav className="fixed top-0 left-0 w-full z-50 border-b border-white/10 bg-[#020304]/85 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
         <a href="#" className="flex items-center gap-3">
-          <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-purple-900 to-purple-700 flex items-center justify-center shadow-lg shadow-purple-900/50">
-            <Code2 size={22} />
+          <div className="w-11 h-11 rounded-xl bg-[#EF233C] flex items-center justify-center shadow-lg shadow-[#EF233C]/20">
+            <Code2 size={22} className="text-white" />
           </div>
 
           <div>
@@ -27,7 +27,7 @@ function Navbar() {
               Jaleel.dev
             </h1>
 
-            <p className="text-xs text-purple-300">
+            <p className="text-xs text-gray-500">
               AI • Full Stack • Frontend
             </p>
           </div>
@@ -38,7 +38,7 @@ function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-gray-300 hover:text-purple-300 transition duration-300"
+              className="text-gray-300 hover:text-[#EF233C] transition duration-300"
             >
               {link.name}
             </a>
@@ -47,32 +47,32 @@ function Navbar() {
 
         <a
           href="#booking"
-          className="hidden lg:inline-flex px-6 py-3 rounded-xl bg-gradient-to-r from-purple-800 to-purple-600 hover:from-purple-700 hover:to-purple-500 text-white font-semibold transition shadow-lg shadow-purple-900/40"
+          className="hidden lg:inline-flex px-6 py-3 rounded-xl bg-[#EF233C] hover:bg-[#FF4D6D] text-white font-semibold transition shadow-lg shadow-[#EF233C]/20"
         >
           Start Project
         </a>
 
         <button
           onClick={() => setOpen(!open)}
-          className="lg:hidden w-11 h-11 rounded-xl border border-purple-800/40 bg-purple-950/60 flex items-center justify-center"
+          className="lg:hidden w-11 h-11 rounded-xl border border-white/10 bg-[#090B0F]/80 flex items-center justify-center"
         >
           {open ? (
-            <X className="text-purple-300" />
+            <X className="text-[#EF233C]" />
           ) : (
-            <Menu className="text-purple-300" />
+            <Menu className="text-[#EF233C]" />
           )}
         </button>
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-purple-900/30 bg-[#04010A]/98 backdrop-blur-xl px-6 py-6">
+        <div className="lg:hidden border-t border-white/10 bg-[#020304]/95 backdrop-blur-xl px-6 py-6">
           <div className="flex flex-col gap-5">
             {links.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="text-gray-300 hover:text-purple-300 transition"
+                className="text-gray-300 hover:text-[#EF233C] transition"
               >
                 {link.name}
               </a>
@@ -81,7 +81,7 @@ function Navbar() {
             <a
               href="#booking"
               onClick={() => setOpen(false)}
-              className="mt-2 text-center px-5 py-3 rounded-xl bg-gradient-to-r from-purple-800 to-purple-600 text-white font-semibold"
+              className="mt-2 text-center px-5 py-3 rounded-xl bg-[#EF233C] hover:bg-[#FF4D6D] text-white font-semibold transition"
             >
               Start Project
             </a>

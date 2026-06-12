@@ -52,7 +52,7 @@ function FAQ() {
       className="relative z-10 px-6 py-24 max-w-5xl mx-auto"
     >
       <div className="text-center mb-14">
-        <p className="text-blue-400 uppercase tracking-[0.3em] mb-4">
+        <p className="text-[#EF233C] uppercase tracking-[0.3em] mb-4">
           FAQ
         </p>
 
@@ -73,25 +73,23 @@ function FAQ() {
           return (
             <div
               key={faq.question}
-              className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden hover:border-blue-500/30 transition"
+              className="rounded-2xl border border-white/10 bg-[#090B0F]/75 backdrop-blur-xl overflow-hidden hover:border-[#EF233C]/30 transition-all duration-300"
             >
               <button
-                onClick={() =>
-                  setOpenIndex(isOpen ? null : index)
-                }
+                onClick={() => setOpenIndex(isOpen ? null : index)}
                 className="w-full px-6 py-5 flex justify-between items-center text-left"
               >
-                <span className="text-lg font-bold">
+                <span className="text-lg font-bold text-white">
                   {faq.question}
                 </span>
 
-                <span className="text-blue-400 text-3xl font-light">
+                <span className="text-[#EF233C] text-3xl font-light">
                   {isOpen ? "−" : "+"}
                 </span>
               </button>
 
               {isOpen && (
-                <div className="px-6 pb-6 text-gray-400 leading-relaxed border-t border-white/10 pt-4">
+                <div className="px-6 pb-6 pt-4 border-t border-white/10 text-gray-400 leading-relaxed">
                   {faq.answer}
                 </div>
               )}
