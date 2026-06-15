@@ -19,16 +19,38 @@ function ContactForm() {
 
     setStatus("Sending...");
 
+    const form = e.target;
+
     emailjs
       .sendForm(
         "service_1q756vb",
         "template_m3im32p",
-        e.target,
+        form,
         "jZNwOYb2CNPDoVPIp"
       )
-      .then(() => {
+      .then(async () => {
+        try {
+          await fetch(`${import.meta.env.VITE_JARVIS_API}/api/business/lead`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              source: "jaleel.dev",
+              name: form.name.value,
+              email: form.email.value,
+              company: form.company.value,
+              project_type: form.project_type.value,
+              budget: form.budget.value,
+              message: form.message.value,
+            }),
+          });
+        } catch (err) {
+          console.error("Jarvis lead error:", err);
+        }
+
         setStatus("Message sent successfully!");
-        e.target.reset();
+        form.reset();
 
         recaptchaRef.current?.reset();
         setCaptchaVerified(false);
