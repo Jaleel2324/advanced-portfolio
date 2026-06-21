@@ -66,9 +66,6 @@ This portfolio is designed to highlight selected projects such as:
 ### Mobile View
 ![Mobile View](./public/screenshots/mobile.png)
 
-> If you have not added screenshots yet, create a `public/screenshots/` folder and update these image paths.
-
----
 
 ## Project Structure
 
