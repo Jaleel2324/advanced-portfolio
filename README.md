@@ -58,13 +58,14 @@ This portfolio is designed to highlight selected projects such as:
 ## Preview
 
 ### Desktop
-![Portfolio Hompeage](./public/screenshots/homepage.png)
+<img width="1904" height="911" alt="homepage" src="https://github.com/user-attachments/assets/19878102-dd5f-402e-bb3f-d16f02212234" />
 
 ### Projects Section
-![Projects Section](./public/screenshots/projects.png)
+<img width="1902" height="911" alt="projects" src="https://github.com/user-attachments/assets/dce71bce-bfc5-40cf-a815-7c8458bd7e08" />
 
 ### Mobile View
-![Mobile View](./public/screenshots/mobile.png)
+<img width="828" height="1792" alt="mobile" src="https://github.com/user-attachments/assets/95caa3d6-b354-462e-a2d9-a23033b84ae4" />
+
 
 
 ## Project Structure
