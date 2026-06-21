@@ -58,7 +58,7 @@ This portfolio is designed to highlight selected projects such as:
 ## Preview
 
 ### Desktop
-![Portfolio Homepage](./public/screenshots/homepage.png)
+![Portfolio Hompeage](./public/screenshots/homepage.png)
 
 ### Projects Section
 ![Projects Section](./public/screenshots/projects.png)
