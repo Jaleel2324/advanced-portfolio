@@ -59,6 +59,16 @@ This portfolio highlights selected projects such as:
 
 The portfolio includes a desktop experience, a featured projects section, and a mobile-responsive layout designed to present my work clearly across devices.
 
+### Homepage
+<img width="1904" height="911" alt="homepage" src="https://github.com/user-attachments/assets/b9e13bbd-9771-4a5a-9a09-85882c2826e8" />
+
+### Projects
+<img width="1902" height="911" alt="projects" src="https://github.com/user-attachments/assets/9e619cbb-468e-4e48-b01e-6735a8e111cd" />
+
+### Mobile
+<img width="828" height="1792" alt="mobile" src="https://github.com/user-attachments/assets/69c780fa-0c7b-4b1b-9326-a0bf10c90dd8" />
+
+
 ---
 
 ## Project Structure
@@ -77,60 +87,120 @@ advanced-portfolio/
 │   └── main.jsx
 ├── package.json
 └── README.md
-Copy
-Design Goals
+```
+
+---
+
+## Design Goals
+
 This portfolio was built with a focus on:
 
-Clear personal branding
-Strong first impressions for recruiters and clients
-Clean layout and readable visual hierarchy
-Smooth, modern frontend presentation
-Easy navigation across projects and contact information
-Getting Started
-1. Clone the repository
-Copygit clone https://github.com/Jaleel2324/advanced-portfolio.git
+- Clear personal branding
+- Strong first impressions for recruiters and clients
+- Clean layout and readable visual hierarchy
+- Smooth, modern frontend presentation
+- Easy navigation across projects and contact information
+
+---
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Jaleel2324/advanced-portfolio.git
 cd advanced-portfolio
-2. Install dependencies
-Copynpm install
-3. Start the development server
-Copynpm run dev
-4. Open in browser
-Copyhttp://localhost:5173
-Available Scripts
-Run development server
-Copynpm run dev
-Build for production
-Copynpm run build
-Preview production build
-Copynpm run preview
-Why I Built This
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Start the development server
+
+```bash
+npm run dev
+```
+
+### 4. Open in browser
+
+```bash
+http://localhost:5173
+```
+
+---
+
+## Available Scripts
+
+### Run development server
+
+```bash
+npm run dev
+```
+
+### Build for production
+
+```bash
+npm run build
+```
+
+### Preview production build
+
+```bash
+npm run preview
+```
+
+---
+
+## Why I Built This
+
 I wanted a portfolio that represents both technical ability and product thinking. Instead of acting as a simple profile page, this project is designed to function as a professional entry point into my work, showing the kinds of products I enjoy building and the direction I am growing as a software engineer.
 
-What This Portfolio Represents
+---
+
+## What This Portfolio Represents
+
 This project reflects the type of engineer I aim to be:
 
-Product-minded
-Design-aware
-Comfortable building across the stack
-Focused on usability, structure, and presentation quality
+- Product-minded
+- Design-aware
+- Comfortable building across the stack
+- Focused on usability, structure, and presentation quality
+
 It is meant to show both technical capability and the ability to communicate work clearly.
 
-Future Improvements
-Add detailed case-study pages for major projects
-Improve accessibility and Lighthouse scores
-Add dark/light theme toggle
-Add technical writing or blog section
-Add analytics and performance monitoring
-Expand project filtering and search
-Deployment
+---
+
+## Future Improvements
+
+- Add detailed case-study pages for major projects
+- Improve accessibility and Lighthouse scores
+- Add dark/light theme toggle
+- Add technical writing or blog section
+- Add analytics and performance monitoring
+- Expand project filtering and search
+
+---
+
+## Deployment
+
 The live version of this project is available at:
 
-https://jaleel.dev/
+[https://jaleel.dev/](https://jaleel.dev/)
 
-Contact
+---
+
+## Contact
+
 If you'd like to connect about junior software engineering roles, freelance work, or collaboration opportunities:
 
-Portfolio: https://jaleel.dev/
-GitHub: https://github.com/Jaleel2324
-Final Note
+- **Portfolio:** [https://jaleel.dev/](https://jaleel.dev/)
+- **GitHub:** [https://github.com/Jaleel2324](https://github.com/Jaleel2324)
+
+---
+
+## Final Note
+
 This portfolio is a living project and will continue evolving as I build stronger software, ship better products, and improve how I present my work publicly.
