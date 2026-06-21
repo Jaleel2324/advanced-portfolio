@@ -4,8 +4,8 @@ A modern developer portfolio built to showcase my full-stack, AI, and product-fo
 
 ## Live Demo
 
-🔗 **Portfolio:** (https://jaleel.dev/) 
-🐙 **GitHub:** https://github.com/Jaleel2324
+- **Portfolio:** [https://jaleel.dev/](https://jaleel.dev/)
+- **GitHub:** [https://github.com/Jaleel2324](https://github.com/Jaleel2324)
 
 ---
 
@@ -35,7 +35,7 @@ The goal of this portfolio is to communicate three things clearly:
 
 ## Featured Work
 
-This portfolio is designed to highlight selected projects such as:
+This portfolio highlights selected projects such as:
 
 - **Food Rush** — Full-stack food ordering platform with customer and admin workflows
 - **JARVIS AI Desktop** — Desktop AI assistant built with React, Tauri, FastAPI, and local AI tooling
@@ -49,23 +49,23 @@ This portfolio is designed to highlight selected projects such as:
 - **React**
 - **Vite**
 - **JavaScript**
-- **CSS3 / Tailwind CSS** *(update if needed)*
-- **Framer Motion** *(remove if not used)*
-- **Vercel / Netlify** *(replace with your actual deployment platform)*
+- **CSS3**
+- **Responsive UI Design**
+- **Modern Component-Based Frontend Architecture**
 
 ---
 
 ## Preview
 
-### Desktop
-<img width="1904" height="911" alt="homepage" src="https://github.com/user-attachments/assets/19878102-dd5f-402e-bb3f-d16f02212234" />
+The portfolio includes a desktop experience, a featured projects section, and a mobile-responsive layout designed to present my work clearly across devices.
 
-### Projects Section
-<img width="1902" height="911" alt="projects" src="https://github.com/user-attachments/assets/dce71bce-bfc5-40cf-a815-7c8458bd7e08" />
-
-### Mobile View
-<img width="828" height="1792" alt="mobile" src="https://github.com/user-attachments/assets/95caa3d6-b354-462e-a2d9-a23033b84ae4" />
-
+---
+##Homepage
+<img width="1904" height="911" alt="homepage" src="https://github.com/user-attachments/assets/c900f63f-be23-49bf-9ddd-4a7dd0550a98" />
+##Projects
+<img width="1902" height="911" alt="projects" src="https://github.com/user-attachments/assets/03abecd1-d896-4a7f-b1f7-2b8224feaab5" />
+##Mobile
+<img width="828" height="1792" alt="mobile" src="https://github.com/user-attachments/assets/27287e12-d346-4663-85d2-1535c4e7e32b" />
 
 
 ## Project Structure
