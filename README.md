@@ -60,13 +60,6 @@ This portfolio highlights selected projects such as:
 The portfolio includes a desktop experience, a featured projects section, and a mobile-responsive layout designed to present my work clearly across devices.
 
 ---
-##Homepage
-<img width="1904" height="911" alt="homepage" src="https://github.com/user-attachments/assets/c900f63f-be23-49bf-9ddd-4a7dd0550a98" />
-##Projects
-<img width="1902" height="911" alt="projects" src="https://github.com/user-attachments/assets/03abecd1-d896-4a7f-b1f7-2b8224feaab5" />
-##Mobile
-<img width="828" height="1792" alt="mobile" src="https://github.com/user-attachments/assets/27287e12-d346-4663-85d2-1535c4e7e32b" />
-
 
 ## Project Structure
 
@@ -84,45 +77,36 @@ advanced-portfolio/
 │   └── main.jsx
 ├── package.json
 └── README.md
+Copy
+Design Goals
+This portfolio was built with a focus on:
 
-## Design Goals
 Clear personal branding
 Strong first impressions for recruiters and clients
 Clean layout and readable visual hierarchy
 Smooth, modern frontend presentation
 Easy navigation across projects and contact information
-
-## Getting Started
-1.Clone The Repository 
-git clone https://github.com/Jaleel2324/advanced-portfolio.git
+Getting Started
+1. Clone the repository
+Copygit clone https://github.com/Jaleel2324/advanced-portfolio.git
 cd advanced-portfolio
-
-2.Install dependencies
-npm install
-
-3.Start the development server
-npm run dev
-
-4.Open in browser
-http://localhost:5173
-
-## Available Scripts
-1. Run development server
-npm run dev
-
-2.Build for production
-npm run build
-
-3.Preview production build
-npm run preview
-
-4.Lint project
-npm run lint
-
-## Why I Built This
+2. Install dependencies
+Copynpm install
+3. Start the development server
+Copynpm run dev
+4. Open in browser
+Copyhttp://localhost:5173
+Available Scripts
+Run development server
+Copynpm run dev
+Build for production
+Copynpm run build
+Preview production build
+Copynpm run preview
+Why I Built This
 I wanted a portfolio that represents both technical ability and product thinking. Instead of acting as a simple profile page, this project is designed to function as a professional entry point into my work, showing the kinds of products I enjoy building and the direction I am growing as a software engineer.
 
-## What This Portfolio Represents
+What This Portfolio Represents
 This project reflects the type of engineer I aim to be:
 
 Product-minded
@@ -131,32 +115,22 @@ Comfortable building across the stack
 Focused on usability, structure, and presentation quality
 It is meant to show both technical capability and the ability to communicate work clearly.
 
-## Future Improvements
+Future Improvements
 Add detailed case-study pages for major projects
 Improve accessibility and Lighthouse scores
 Add dark/light theme toggle
 Add technical writing or blog section
 Add analytics and performance monitoring
 Expand project filtering and search
-
-## Deployemnt
+Deployment
 The live version of this project is available at:
 
 https://jaleel.dev/
 
-## Contact
+Contact
 If you'd like to connect about junior software engineering roles, freelance work, or collaboration opportunities:
 
 Portfolio: https://jaleel.dev/
 GitHub: https://github.com/Jaleel2324
-
-
-## Final Note
-
+Final Note
 This portfolio is a living project and will continue evolving as I build stronger software, ship better products, and improve how I present my work publicly.
-
-## Two quick upgrades after you paste it
-1. If `npm run lint` is not configured, remove that subsection.
-2. If you already have screenshot image paths ready, I can give you a stronger **Preview** section with exact Markdown image embeds next.
-
-If you want, I can now do the next cleanup pass and give you the **best final repo description, GitHub topics, and homepage hero text** for `advanced-portfolio`.
