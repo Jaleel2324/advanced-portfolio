@@ -1,16 +1,88 @@
-# React + Vite
+# Advanced Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern developer portfolio built to showcase my full-stack, AI, and product-focused software engineering work. This project serves as the central place to explore my featured projects, technical skills, and ways to contact me for full-time or freelance opportunities.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🔗 **Portfolio:** (https://jaleel.dev/) 
+🐙 **GitHub:** https://github.com/Jaleel2324
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Overview
 
-## Expanding the ESLint configuration
+I built this portfolio to present myself as more than just someone who writes code. It highlights the projects I have designed and built, the technologies I work with, and the kind of product-focused engineering work I want to keep doing.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The goal of this portfolio is to communicate three things clearly:
+
+- I can build polished user-facing applications
+- I can work across frontend, backend, and AI-oriented projects
+- I can turn ideas into real, structured software projects
+
+---
+
+## Features
+
+- Responsive design for desktop, tablet, and mobile
+- Modern project showcase for featured applications
+- Clean developer introduction and skills sections
+- Contact section for job and freelance opportunities
+- Smooth UI transitions and interactive presentation
+- Fast frontend performance powered by Vite
+- Component-based React architecture for maintainability
+
+---
+
+## Featured Work
+
+This portfolio is designed to highlight selected projects such as:
+
+- **Food Rush** — Full-stack food ordering platform with customer and admin workflows
+- **JARVIS AI Desktop** — Desktop AI assistant built with React, Tauri, FastAPI, and local AI tooling
+- **IronMind AI** — AI-focused product experimentation and interface development
+- Additional frontend, full-stack, and AI product work as the portfolio grows
+
+---
+
+## Tech Stack
+
+- **React**
+- **Vite**
+- **JavaScript**
+- **CSS3 / Tailwind CSS** *(update if needed)*
+- **Framer Motion** *(remove if not used)*
+- **Vercel / Netlify** *(replace with your actual deployment platform)*
+
+---
+
+## Preview
+
+### Desktop
+![Portfolio Homepage](./public/screenshots/homepage.png)
+
+### Projects Section
+![Projects Section](./public/screenshots/projects.png)
+
+### Mobile View
+![Mobile View](./public/screenshots/mobile.png)
+
+> If you have not added screenshots yet, create a `public/screenshots/` folder and update these image paths.
+
+---
+
+## Project Structure
+
+```bash
+advanced-portfolio/
+├── public/
+│   └── screenshots/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── sections/
+│   ├── pages/
+│   ├── styles/
+│   ├── App.jsx
+│   └── main.jsx
+├── package.json
+└── README.md
