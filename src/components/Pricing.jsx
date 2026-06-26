@@ -4,6 +4,7 @@ const plans = [
   {
     name: "Starter Website",
     price: "$500",
+    deposit: "$250",
     monthly: "$100/mo",
     description:
       "Perfect for local businesses, personal brands, and startups needing a professional online presence.",
@@ -21,6 +22,7 @@ const plans = [
   {
     name: "Business Website",
     price: "$1,500",
+    deposit: "$750",
     monthly: "$200/mo",
     featured: true,
     description:
@@ -40,6 +42,7 @@ const plans = [
   {
     name: "AI & Full-Stack Platform",
     price: "$2,000",
+    deposit: "$1,000",
     monthly: "$400/mo",
     description:
       "Custom AI applications, SaaS products, dashboards, automation systems, and advanced full-stack platforms.",
@@ -94,27 +97,27 @@ function Pricing() {
 
             <CreditCard size={34} className="text-[#EF233C] mb-6" />
 
-            <h3 className="text-3xl font-bold mb-2 text-white">
-              {plan.name}
-            </h3>
+            <h3 className="text-3xl font-bold mb-2 text-white">{plan.name}</h3>
 
-            <p className="text-gray-400 mb-6">
-              {plan.description}
-            </p>
+            <p className="text-gray-400 mb-6">{plan.description}</p>
 
             <div className="mb-8">
-              <p className="text-5xl font-black text-white">
-                {plan.price}
-              </p>
+              <p className="text-gray-400 mb-2">Project Total</p>
 
-              <p className="text-[#EF233C] mt-2">
-                One-Time Project Cost
-              </p>
+              <p className="text-5xl font-black text-white">{plan.price}</p>
+
+              <div className="mt-5 rounded-2xl border border-[#EF233C]/25 bg-[#EF233C]/10 p-4">
+                <p className="text-sm text-red-200">
+                  Only {plan.deposit} To Get Started
+                </p>
+
+                <p className="text-sm text-gray-300 mt-2">
+                  50% deposit required. Remaining balance due before launch.
+                </p>
+              </div>
 
               <div className="mt-5 rounded-2xl border border-white/10 bg-black/35 p-4">
-                <p className="text-sm text-gray-400">
-                  Monthly Maintenance
-                </p>
+                <p className="text-sm text-gray-400">Monthly Maintenance</p>
 
                 <p className="text-2xl font-bold text-white">
                   {plan.monthly}
@@ -127,9 +130,7 @@ function Pricing() {
                 <div key={feature} className="flex items-center gap-3">
                   <Check size={18} className="text-[#EF233C] shrink-0" />
 
-                  <span className="text-gray-300">
-                    {feature}
-                  </span>
+                  <span className="text-gray-300">{feature}</span>
                 </div>
               ))}
             </div>
@@ -152,7 +153,7 @@ function Pricing() {
                 rel="noreferrer"
                 className="block w-full text-center py-4 rounded-xl border border-[#EF233C]/25 bg-[#EF233C]/10 text-red-200 hover:bg-[#EF233C]/15 transition font-semibold"
               >
-                Pay Deposit
+                Start Project — Pay {plan.deposit} Deposit
               </a>
 
               <a
@@ -166,6 +167,27 @@ function Pricing() {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="mt-14 rounded-3xl border border-white/10 bg-[#090B0F]/80 p-8 backdrop-blur-xl text-center">
+        <p className="text-[#EF233C] uppercase tracking-[0.3em] mb-3">
+          Simple Payment Process
+        </p>
+
+        <h3 className="text-4xl font-black mb-4 text-white">
+          How Payments Work
+        </h3>
+
+        <p className="text-gray-300 max-w-3xl mx-auto">
+          Secure your project with a 50% deposit. I design and build your
+          website while keeping you updated. Once the website is complete and
+          approved, the remaining 50% is due before launch.
+        </p>
+
+        <p className="text-gray-400 mt-4">
+          No hidden fees. No surprise costs. Just a straightforward process from
+          start to finish.
+        </p>
       </div>
 
       <div className="mt-14">
@@ -203,9 +225,7 @@ function Pricing() {
             </div>
 
             <div className="text-center lg:text-right">
-              <p className="text-gray-400 mb-2">
-                One-Time Upgrade
-              </p>
+              <p className="text-gray-400 mb-2">One-Time Upgrade</p>
 
               <h3 className="text-6xl font-black text-[#EF233C] mb-6">
                 $800
@@ -228,9 +248,11 @@ function Pricing() {
         <Shield className="text-[#EF233C] shrink-0" />
 
         <p className="text-gray-400">
-          All payments are securely processed through Stripe. Monthly
-          maintenance subscriptions are automatically billed each month and can
-          be managed directly by the client through Stripe.
+          All payments are securely processed through Stripe. Every website
+          project begins with a 50% deposit, with the remaining balance due upon
+          project completion before launch. Monthly maintenance subscriptions
+          are billed separately and can be managed directly by the client through
+          Stripe.
         </p>
       </div>
     </section>
