@@ -1,45 +1,82 @@
-import { Shield, Lock, CreditCard } from "lucide-react";
+import { motion } from "framer-motion";
+import { CreditCard, LockKeyhole, ShieldCheck } from "lucide-react";
+
+const items = [
+  {
+    icon: ShieldCheck,
+    title: "Secure development",
+    description:
+      "Projects are built using modern development practices with performance and reliability in mind.",
+  },
+  {
+    icon: CreditCard,
+    title: "Stripe payments",
+    description:
+      "Deposits, purchases, and subscriptions are securely processed through Stripe.",
+  },
+  {
+    icon: LockKeyhole,
+    title: "Private communication",
+    description:
+      "Project discussions, documents, and client information are handled confidentially.",
+  },
+];
+
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 24,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
 
 function TrustBar() {
   return (
-    <section className="relative z-10 px-6 py-12 max-w-7xl mx-auto">
-      <div className="rounded-3xl border border-white/10 bg-[#090B0F]/80 backdrop-blur-xl p-8">
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="flex items-center gap-4">
-            <Shield className="text-[#EF233C]" size={28} />
-            <div>
-              <h3 className="font-bold text-white">
-                SSL Secured
-              </h3>
-              <p className="text-gray-400 text-sm">
-                All website traffic is encrypted using HTTPS.
-              </p>
-            </div>
-          </div>
+    <section className="relative z-10 px-5 py-24 sm:px-8 md:py-32">
+      <div className="mx-auto max-w-[1400px] border-y border-white/[0.08]">
+        <div className="grid gap-10 py-14 md:grid-cols-3 md:gap-12 md:py-20">
+          {items.map((item, index) => {
+            const Icon = item.icon;
 
-          <div className="flex items-center gap-4">
-            <CreditCard className="text-[#EF233C]" size={28} />
-            <div>
-              <h3 className="font-bold text-white">
-                Stripe Protected Payments
-              </h3>
-              <p className="text-gray-400 text-sm">
-                Secure payment processing powered by Stripe.
-              </p>
-            </div>
-          </div>
+            return (
+              <motion.div
+                key={item.title}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{
+                  once: true,
+                  amount: 0.3,
+                }}
+                transition={{
+                  duration: 0.75,
+                  delay: index * 0.08,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="flex gap-5"
+              >
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/[0.1] bg-white/[0.035]">
+                  <Icon
+                    size={20}
+                    className="text-white/72"
+                  />
+                </div>
 
-          <div className="flex items-center gap-4">
-            <Lock className="text-[#EF233C]" size={28} />
-            <div>
-              <h3 className="font-bold text-white">
-                Secure Communication
-              </h3>
-              <p className="text-gray-400 text-sm">
-                Project inquiries and client information are handled securely.
-              </p>
-            </div>
-          </div>
+                <div>
+                  <h3 className="text-lg font-semibold tracking-[-0.02em] text-white">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-6 text-white/42">
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

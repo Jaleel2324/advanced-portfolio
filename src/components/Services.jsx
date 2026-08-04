@@ -1,100 +1,235 @@
-import {
-  Brain,
-  CalendarCheck,
-  CreditCard,
-  LayoutDashboard,
-  MonitorSmartphone,
-  WandSparkles,
-} from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 const services = [
   {
-    icon: MonitorSmartphone,
-    title: "Premium Websites",
+    number: "01",
+    title: "Premium websites",
     description:
-      "Modern responsive websites for businesses, creators, startups, and personal brands.",
+      "High-end responsive websites built for businesses, startups, creators, and modern brands.",
+    details: [
+      "Responsive development",
+      "Conversion-focused layouts",
+      "Performance optimization",
+    ],
   },
   {
-    icon: LayoutDashboard,
-    title: "Dashboards & Web Apps",
+    number: "02",
+    title: "Web applications",
     description:
-      "Full-stack apps with dashboards, user flows, databases, and admin tools.",
+      "Custom dashboards and full-stack applications designed around real users and business workflows.",
+    details: [
+      "User dashboards",
+      "Admin systems",
+      "Database integration",
+    ],
   },
   {
-    icon: Brain,
-    title: "AI Integrations",
+    number: "03",
+    title: "AI integrations",
     description:
-      "AI assistants, smart workflows, automation tools, chat systems, and AI-powered features.",
+      "Intelligent product features that automate work, support customers, and improve everyday operations.",
+    details: [
+      "AI assistants",
+      "Workflow automation",
+      "Custom AI features",
+    ],
   },
   {
-    icon: CalendarCheck,
-    title: "Booking Systems",
+    number: "04",
+    title: "Booking systems",
     description:
-      "Calendly, Microsoft Teams, appointment flows, and client scheduling integrations.",
+      "Smooth scheduling experiences that connect customers with your calendar, team, or service.",
+    details: [
+      "Calendly integration",
+      "Appointment flows",
+      "Teams integration",
+    ],
   },
   {
-    icon: CreditCard,
-    title: "Payment Platforms",
+    number: "05",
+    title: "Payment experiences",
     description:
-      "Stripe deposits, one-time payments, subscriptions, and client checkout flows.",
+      "Secure payment systems for deposits, subscriptions, purchases, and client checkout flows.",
+    details: [
+      "Stripe payments",
+      "Recurring billing",
+      "Deposit collection",
+    ],
   },
   {
-    icon: WandSparkles,
-    title: "UI/UX Upgrades",
+    number: "06",
+    title: "Interface redesigns",
     description:
-      "Cinematic interfaces, animations, landing pages, and premium frontend design.",
+      "Thoughtful visual upgrades that improve clarity, usability, responsiveness, and brand perception.",
+    details: [
+      "UI modernization",
+      "Motion design",
+      "Mobile optimization",
+    ],
   },
 ];
+
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 28,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
 
 function Services() {
   return (
     <section
       id="services"
-      className="relative z-10 px-6 py-24 max-w-7xl mx-auto"
+      className="relative z-10 px-5 py-28 sm:px-8 md:py-40"
     >
-      <div className="mb-14">
-        <p className="text-[#EF233C] uppercase tracking-[0.3em] mb-4">
-          Services
-        </p>
+      <div className="mx-auto max-w-[1400px]">
+        {/* Section introduction */}
+        <div className="grid gap-12 border-b border-white/[0.08] pb-20 md:pb-28 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{
+              once: true,
+              amount: 0.35,
+            }}
+            transition={{
+              duration: 0.8,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            <p className="text-sm font-medium text-white/42">
+              Services
+            </p>
+          </motion.div>
 
-        <h2 className="text-5xl md:text-6xl font-black mb-6">
-          What Clients Can Hire Me For
-        </h2>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{
+              once: true,
+              amount: 0.25,
+            }}
+            transition={{
+              duration: 0.9,
+              delay: 0.08,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            <h2 className="max-w-5xl text-4xl font-semibold leading-[1.02] tracking-[-0.055em] text-white sm:text-5xl md:text-6xl lg:text-7xl">
+              From the first screen to the systems working behind it.
+            </h2>
 
-        <p className="text-gray-400 max-w-3xl text-lg">
-          I help businesses and startups launch premium web experiences with
-          strong visuals, useful features, and clean technical execution.
-        </p>
-      </div>
+            <p className="mt-8 max-w-3xl text-lg leading-8 text-white/48 md:text-xl">
+              I design and build complete digital experiences, combining
+              premium interfaces with the technical systems businesses need to
+              operate, grow, and serve customers.
+            </p>
+          </motion.div>
+        </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map((service) => {
-          const Icon = service.icon;
-
-          return (
-            <div
-              key={service.title}
-              className="group rounded-3xl border border-white/10 bg-[#090B0F]/75 backdrop-blur-xl p-8 transition-all duration-300 hover:bg-[#090B0F]/95 hover:-translate-y-2 hover:border-[#EF233C]/30 hover:shadow-2xl hover:shadow-[#EF233C]/10"
+        {/* Service rows */}
+        <div>
+          {services.map((service, index) => (
+            <motion.article
+              key={service.number}
+              initial={{
+                opacity: 0,
+                y: 26,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.25,
+              }}
+              transition={{
+                duration: 0.75,
+                delay: index * 0.06,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="group grid gap-8 border-b border-white/[0.08] py-12 sm:grid-cols-[80px_0.9fr_1.1fr] sm:items-start md:py-16 lg:grid-cols-[100px_0.8fr_1fr_0.35fr]"
             >
-              <div className="w-14 h-14 rounded-2xl border border-[#EF233C]/25 bg-[#EF233C]/10 flex items-center justify-center mb-6 transition-all duration-300">
-                <Icon
-                  className="text-[#EF233C]"
-                  size={28}
-                />
-              </div>
+              {/* Number */}
+              <p className="text-sm font-medium text-white/24">
+                {service.number}
+              </p>
 
-              <h3 className="text-2xl font-bold mb-3 text-white">
+              {/* Title */}
+              <h3 className="text-3xl font-semibold tracking-[-0.045em] text-white transition duration-300 group-hover:text-white/72 md:text-4xl">
                 {service.title}
               </h3>
 
-              <p className="text-gray-400 leading-relaxed">
-                {service.description}
-              </p>
+              {/* Description and details */}
+              <div>
+                <p className="max-w-2xl text-base leading-7 text-white/48 md:text-lg md:leading-8">
+                  {service.description}
+                </p>
 
-              <div className="mt-6 h-px w-full bg-gradient-to-r from-[#EF233C]/50 to-transparent opacity-0 group-hover:opacity-100 transition duration-300" />
-            </div>
-          );
-        })}
+                <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+                  {service.details.map((detail) => (
+                    <span
+                      key={detail}
+                      className="text-sm text-white/30"
+                    >
+                      {detail}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Arrow */}
+              <div className="hidden justify-end lg:flex">
+                <ArrowUpRight
+                  size={22}
+                  className="text-white/18 transition duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-white/60"
+                />
+              </div>
+            </motion.article>
+          ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 24,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          transition={{
+            duration: 0.8,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="flex flex-col gap-7 pt-14 md:flex-row md:items-center md:justify-between md:pt-20"
+        >
+          <p className="max-w-2xl text-xl leading-8 tracking-[-0.025em] text-white/65 md:text-2xl md:leading-9">
+            Have a project that combines more than one service? Most of my work
+            is designed and built as one connected system.
+          </p>
+
+          <a
+            href="#booking"
+            className="inline-flex min-h-12 w-fit items-center justify-center gap-2 rounded-full bg-white px-7 text-sm font-semibold text-black transition duration-300 hover:scale-[1.025] hover:bg-white/90 active:scale-[0.98]"
+          >
+            Discuss your project
+            <ArrowUpRight size={16} />
+          </a>
+        </motion.div>
       </div>
     </section>
   );

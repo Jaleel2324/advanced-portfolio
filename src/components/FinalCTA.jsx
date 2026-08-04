@@ -1,44 +1,75 @@
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 28,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
 function FinalCTA() {
   return (
-    <section className="relative z-10 px-6 py-24 max-w-7xl mx-auto">
-      <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#090B0F]/90 backdrop-blur-xl p-10 md:p-16 text-center">
-        {/* Red ambient glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#EF233C]/15 rounded-full blur-3xl" />
+    <section className="relative z-10 px-5 py-28 sm:px-8 md:py-40">
+      <div className="mx-auto max-w-[1400px]">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{
+            once: true,
+            amount: 0.25,
+          }}
+          transition={{
+            duration: 0.9,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="relative overflow-hidden border-y border-white/[0.08] py-24 text-center md:py-36"
+        >
+          {/* Soft background treatment */}
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.055),transparent_58%)]" />
 
-        {/* Subtle vignette */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,rgba(0,0,0,0.45)_100%)]" />
+          <div className="relative mx-auto max-w-5xl">
+            <p className="text-sm font-medium text-white/40">
+              Ready when you are
+            </p>
 
-        <div className="relative z-10">
-          <p className="text-[#EF233C] uppercase tracking-[0.3em] mb-4">
-            Ready To Build?
-          </p>
+            <h2 className="mt-7 text-5xl font-semibold leading-[0.98] tracking-[-0.06em] text-white sm:text-6xl md:text-7xl lg:text-8xl">
+              Let’s build something
+              <span className="block text-white/40">
+                worth remembering.
+              </span>
+            </h2>
 
-          <h2 className="text-5xl md:text-6xl font-black mb-6">
-            Let’s turn your idea into a premium digital experience.
-          </h2>
+            <p className="mx-auto mt-9 max-w-2xl text-lg leading-8 text-white/48 md:text-xl">
+              Whether the project is a website, product, platform, or
+              intelligent system, the goal is the same: create something clear,
+              useful, and carefully built.
+            </p>
 
-          <p className="text-gray-300 max-w-3xl mx-auto text-lg mb-10">
-            Whether you need a website, dashboard, AI platform, booking system,
-            or full-stack application, let's build something that helps your
-            business stand out and grow online.
-          </p>
+            <div className="mt-11 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <a
+                href="#booking"
+                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-white px-7 text-sm font-semibold text-black transition duration-300 hover:scale-[1.025] hover:bg-white/90 active:scale-[0.98] sm:w-auto"
+              >
+                Book a discovery call
+                <ArrowUpRight size={16} />
+              </a>
 
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="#booking"
-              className="px-8 py-4 rounded-2xl bg-[#EF233C] hover:bg-[#FF4D6D] transition-all duration-300 font-semibold text-white shadow-lg shadow-[#EF233C]/20"
-            >
-              Book A Call
-            </a>
-
-            <a
-              href="#contact"
-              className="px-8 py-4 rounded-2xl border border-[#EF233C]/30 bg-[#EF233C]/10 hover:bg-[#EF233C]/15 transition-all duration-300 font-semibold text-white"
-            >
-              Send Project Inquiry
-            </a>
+              <a
+                href="#contact"
+                className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-white/[0.14] bg-white/[0.03] px-7 text-sm font-semibold text-white transition duration-300 hover:scale-[1.025] hover:border-white/25 hover:bg-white/[0.07] active:scale-[0.98] sm:w-auto"
+              >
+                Send a project inquiry
+                <ArrowUpRight size={16} />
+              </a>
+            </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

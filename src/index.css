@@ -2,155 +2,570 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth Scrolling */
+/* =========================================================
+   GLOBAL DESIGN TOKENS
+========================================================= */
+
+:root {
+  --page-background: #020304;
+  --text-primary: #f5f5f7;
+  --text-secondary: #a1a1a6;
+  --text-muted: #6e6e73;
+
+  --surface-soft: rgba(255, 255, 255, 0.035);
+  --surface-medium: rgba(255, 255, 255, 0.06);
+
+  --border-soft: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.12);
+
+  --accent: #ef233c;
+  --accent-hover: #ff4056;
+
+  --container-width: 1400px;
+  --content-padding: 24px;
+
+  --radius-small: 14px;
+  --radius-medium: 24px;
+  --radius-large: 40px;
+  --radius-pill: 999px;
+
+  --section-space: 160px;
+}
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 html {
   scroll-behavior: smooth;
+  background: var(--page-background);
 }
 
-/* Global Layout */
-html,
 body,
 #root {
-  margin: 0;
-  padding: 0;
   width: 100%;
   min-height: 100vh;
-  background: #050816;
-  color: white;
-  font-family: Inter, system-ui, sans-serif;
+}
+
+body {
   overflow-x: hidden;
+  background: var(--page-background);
+  color: var(--text-primary);
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "SF Pro Text",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  font-size: 16px;
+  line-height: 1.5;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Global Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
 }
 
-/* Selection Color */
-::selection {
-  background: rgba(37, 99, 235, 0.4);
-  color: white;
+p {
+  text-wrap: pretty;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
+strong {
+  font-weight: 600;
 }
 
-::-webkit-scrollbar-track {
-  background: #050816;
+.text-primary {
+  color: var(--text-primary);
 }
 
-::-webkit-scrollbar-thumb {
-  background: rgba(37, 99, 235, 0.5);
-  border-radius: 999px;
+.text-secondary {
+  color: var(--text-secondary);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(37, 99, 235, 0.8);
+.text-muted {
+  color: var(--text-muted);
 }
 
-/* Links */
+/* =========================================================
+   LINKS
+========================================================= */
+
 a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
-/* Buttons */
+a,
 button {
-  cursor: pointer;
-  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Images */
-img {
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+button {
+  border: 0;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+button,
+a {
+  transition:
+    color 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+/* Primary Apple-inspired button */
+
+.button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 46px;
+  padding: 0 24px;
+
+  border-radius: var(--radius-pill);
+  background: var(--text-primary);
+  color: #050505;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.button-primary:hover {
+  background: white;
+  transform: scale(1.025);
+}
+
+.button-primary:active {
+  transform: scale(0.985);
+}
+
+/* Secondary button */
+
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 46px;
+  padding: 0 24px;
+
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-pill);
+
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-primary);
+
+  font-size: 15px;
+  font-weight: 600;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.button-secondary:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.025);
+}
+
+.button-secondary:active {
+  transform: scale(0.985);
+}
+
+/* Text-link style */
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.text-link:hover {
+  opacity: 0.68;
+}
+
+/* =========================================================
+   MEDIA
+========================================================= */
+
+img,
+picture,
+svg,
+canvas {
   display: block;
   max-width: 100%;
 }
 
-/* Video */
+img {
+  height: auto;
+}
+
 video {
   display: block;
   width: 100%;
 }
 
-/* Glassmorphism Utility */
-.glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
+/* =========================================================
+   FORMS
+========================================================= */
 
-/* Gradient Text */
-.gradient-text {
-  background: linear-gradient(
-    90deg,
-    #60a5fa,
-    #3b82f6,
-    #8b5cf6
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Hero Glow */
-.hero-glow {
-  box-shadow:
-    0 0 80px rgba(59, 130, 246, 0.35),
-    0 0 160px rgba(139, 92, 246, 0.15);
-}
-
-/* Animated Background Grid */
-.grid-bg {
-  background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0.04) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.04) 1px,
-      transparent 1px
-    );
-
-  background-size: 60px 60px;
-}
-
-/* Card Hover Effect */
-.card-hover {
-  transition: all 0.35s ease;
-}
-
-.card-hover:hover {
-  transform: translateY(-8px);
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.3),
-    0 0 40px rgba(59, 130, 246, 0.15);
-}
-
-/* Input Styling */
 input,
 textarea,
 select {
-  color: white;
+  width: 100%;
+
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-small);
+
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--text-primary);
+
+  font: inherit;
+  outline: none;
+
+  transition:
+    border-color 220ms ease,
+    background-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+input,
+select {
+  min-height: 52px;
+  padding: 0 16px;
+}
+
+textarea {
+  min-height: 150px;
+  padding: 16px;
+  resize: vertical;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(245, 245, 247, 0.38);
 }
 
-/* Section Spacing Helper */
-.section-padding {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+input:hover,
+textarea:hover,
+select:hover {
+  border-color: rgba(255, 255, 255, 0.16);
 }
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+
+  background: rgba(255, 255, 255, 0.055);
+
+  box-shadow:
+    0 0 0 4px rgba(255, 255, 255, 0.035);
+}
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+  background: rgba(239, 35, 60, 0.32);
+  color: white;
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--page-background);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid var(--page-background);
+  border-radius: var(--radius-pill);
+
+  background: rgba(255, 255, 255, 0.18);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+/* Firefox scrollbar */
+
+* {
+  scrollbar-color: rgba(255, 255, 255, 0.22) var(--page-background);
+  scrollbar-width: thin;
+}
+
+/* =========================================================
+   LAYOUT UTILITIES
+========================================================= */
+
+.page-container {
+  width: min(
+    calc(100% - calc(var(--content-padding) * 2)),
+    var(--container-width)
+  );
+
+  margin-inline: auto;
+}
+
+.section-padding {
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
+}
+
+.section-heading {
+  font-size: clamp(3rem, 7vw, 7rem);
+  line-height: 0.96;
+  letter-spacing: -0.06em;
+}
+
+.section-description {
+  max-width: 680px;
+
+  color: var(--text-secondary);
+
+  font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+  line-height: 1.6;
+}
+
+/* =========================================================
+   PREMIUM SURFACES
+========================================================= */
+
+/*
+  Use this only when content truly needs a container.
+  The old site used glass styling too frequently.
+*/
+
+.glass {
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-large);
+
+  background: rgba(10, 10, 12, 0.48);
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* Softer project or feature surface */
+
+.premium-surface {
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-large);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.28);
+}
+
+/* =========================================================
+   ACCENT TEXT
+========================================================= */
+
+/*
+  This replaces the blue-purple AI-style gradient.
+  The accent is now subtle and tied to your red branding.
+*/
+
+.gradient-text {
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff 0%,
+      #d7d7da 58%,
+      #8f8f96 100%
+    );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.accent-text {
+  color: var(--accent);
+}
+
+/* =========================================================
+   SUBTLE GLOW
+========================================================= */
+
+/*
+  We are keeping the class so existing components do not break,
+  but the effect is much calmer.
+*/
+
+.hero-glow {
+  box-shadow:
+    0 40px 120px rgba(0, 0, 0, 0.45),
+    0 0 90px rgba(239, 35, 60, 0.06);
+}
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+/*
+  The old grid was visible and template-like.
+  This version is extremely subtle.
+*/
+
+.grid-bg {
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 20%,
+      black 72%,
+      transparent
+    );
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 20%,
+      black 72%,
+      transparent
+    );
+}
+
+/* =========================================================
+   HOVER BEHAVIOR
+========================================================= */
+
+/*
+  The old hover moved cards upward by 8px and added a large blue glow.
+  This version barely moves and feels more controlled.
+*/
+
+.card-hover {
+  transition:
+    transform 450ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 300ms ease,
+    background-color 300ms ease,
+    box-shadow 450ms ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(255, 255, 255, 0.14);
+
+  box-shadow:
+    0 26px 70px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================================
+   IMAGE INTERACTIONS
+========================================================= */
+
+.image-reveal {
+  overflow: hidden;
+}
+
+.image-reveal img {
+  transition:
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 500ms ease;
+}
+
+.image-reveal:hover img {
+  transform: scale(1.018);
+}
+
+/* =========================================================
+   HERO MOTION
+========================================================= */
+
+/*
+  We keep your existing hero animation class names so the hero
+  does not break, but slow the effects down and reduce movement.
+*/
+
 @keyframes heroSpinSlow {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -160,6 +575,7 @@ textarea::placeholder {
   from {
     transform: rotate(360deg);
   }
+
   to {
     transform: rotate(0deg);
   }
@@ -168,60 +584,90 @@ textarea::placeholder {
 @keyframes heroFloat {
   0%,
   100% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
+
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
   }
 }
 
 @keyframes heroPanelTop {
   0%,
   100% {
-    transform: translateX(-50%) translateY(0px) rotate(10deg);
+    transform:
+      translateX(-50%)
+      translateY(0)
+      rotate(10deg);
   }
+
   50% {
-    transform: translateX(-50%) translateY(-12px) rotate(18deg);
+    transform:
+      translateX(-50%)
+      translateY(-6px)
+      rotate(13deg);
   }
 }
 
 @keyframes heroPanelRight {
   0%,
   100% {
-    transform: translateY(-50%) translateX(0px) rotate(18deg);
+    transform:
+      translateY(-50%)
+      translateX(0)
+      rotate(18deg);
   }
+
   50% {
-    transform: translateY(-50%) translateX(10px) rotate(26deg);
+    transform:
+      translateY(-50%)
+      translateX(5px)
+      rotate(21deg);
   }
 }
 
 @keyframes heroPanelBottom {
   0%,
   100% {
-    transform: translateX(-50%) translateY(0px) rotate(-10deg);
+    transform:
+      translateX(-50%)
+      translateY(0)
+      rotate(-10deg);
   }
+
   50% {
-    transform: translateX(-50%) translateY(12px) rotate(-18deg);
+    transform:
+      translateX(-50%)
+      translateY(6px)
+      rotate(-13deg);
   }
 }
 
 @keyframes heroPanelLeft {
   0%,
   100% {
-    transform: translateY(-50%) translateX(0px) rotate(-18deg);
+    transform:
+      translateY(-50%)
+      translateX(0)
+      rotate(-18deg);
   }
+
   50% {
-    transform: translateY(-50%) translateX(-10px) rotate(-26deg);
+    transform:
+      translateY(-50%)
+      translateX(-5px)
+      rotate(-21deg);
   }
 }
 
 @keyframes heroPulseRing {
   0% {
-    transform: scale(0.92);
-    opacity: 0.9;
+    transform: scale(0.96);
+    opacity: 0.4;
   }
+
   100% {
-    transform: scale(1.35);
+    transform: scale(1.18);
     opacity: 0;
   }
 }
@@ -229,59 +675,117 @@ textarea::placeholder {
 @keyframes heroParticleFloat {
   0%,
   100% {
-    transform: translateY(0px);
-    opacity: 0.65;
+    transform: translateY(0);
+    opacity: 0.45;
   }
+
   50% {
-    transform: translateY(-12px);
-    opacity: 1;
+    transform: translateY(-6px);
+    opacity: 0.72;
   }
 }
 
 .hero-spin-slow {
-  animation: heroSpinSlow 18s linear infinite;
+  animation: heroSpinSlow 34s linear infinite;
 }
 
 .hero-spin-reverse {
-  animation: heroSpinReverse 14s linear infinite;
+  animation: heroSpinReverse 28s linear infinite;
 }
 
 .hero-float {
-  animation: heroFloat 6s ease-in-out infinite;
+  animation: heroFloat 10s ease-in-out infinite;
 }
 
 .hero-panel-top {
-  animation: heroPanelTop 7s ease-in-out infinite;
+  animation: heroPanelTop 12s ease-in-out infinite;
 }
 
 .hero-panel-right {
-  animation: heroPanelRight 8s ease-in-out infinite;
+  animation: heroPanelRight 14s ease-in-out infinite;
 }
 
 .hero-panel-bottom {
-  animation: heroPanelBottom 7s ease-in-out infinite;
+  animation: heroPanelBottom 12s ease-in-out infinite;
 }
 
 .hero-panel-left {
-  animation: heroPanelLeft 8s ease-in-out infinite;
+  animation: heroPanelLeft 14s ease-in-out infinite;
 }
 
 .hero-pulse-ring {
-  animation: heroPulseRing 2.8s ease-out infinite;
+  animation: heroPulseRing 4.8s ease-out infinite;
 }
 
 .hero-particle-1 {
-  animation: heroParticleFloat 5s ease-in-out infinite;
+  animation: heroParticleFloat 9s ease-in-out infinite;
 }
 
 .hero-particle-2 {
-  animation: heroParticleFloat 6.5s ease-in-out infinite 0.4s;
+  animation: heroParticleFloat 11s ease-in-out infinite 0.5s;
 }
 
 .hero-particle-3 {
-  animation: heroParticleFloat 5.8s ease-in-out infinite 0.8s;
+  animation: heroParticleFloat 10s ease-in-out infinite 1s;
 }
 
 .hero-particle-4 {
-  animation: heroParticleFloat 6.2s ease-in-out infinite 1s;
+  animation: heroParticleFloat 12s ease-in-out infinite 1.5s;
+}
+
+/* =========================================================
+   FOCUS ACCESSIBILITY
+========================================================= */
+
+:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.72);
+  outline-offset: 4px;
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE ADJUSTMENTS
+========================================================= */
+
+@media (max-width: 768px) {
+  :root {
+    --content-padding: 20px;
+    --section-space: 110px;
+    --radius-large: 28px;
+  }
+
+  .section-heading {
+    line-height: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --content-padding: 16px;
+    --section-space: 88px;
+  }
+
+  .button-primary,
+  .button-secondary {
+    min-height: 44px;
+    padding-inline: 20px;
+  }
 }

@@ -1,161 +1,131 @@
 import { motion } from "framer-motion";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 
-function TransformButton({
-  href,
-  children,
-  filled = false,
-  delay = 0,
-}) {
-  return (
-    <motion.a
-      href={href}
-      initial={{
-        width: 54,
-        opacity: 0,
-        scale: 0.7,
-      }}
-      animate={{
-        width: filled ? 240 : 220,
-        opacity: 1,
-        scale: 1,
-      }}
-      transition={{
-        duration: 2.2,
-        delay,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      whileHover={{
-        scale: 1.03,
-        y: -3,
-      }}
-      className={`relative h-[58px] overflow-hidden rounded-[18px] flex items-center justify-center ${
-        filled
-          ? "bg-[#EF233C] text-white shadow-xl shadow-[#EF233C]/20"
-          : "border border-[#EF233C]/40 bg-[#090B0F]/80 backdrop-blur-xl text-white"
-      }`}
-    >
-      <motion.div
-        initial={{
-          width: 18,
-          height: 18,
-          rotate: 45,
-        }}
-        animate={{
-          width: 0,
-          height: 0,
-          rotate: 90,
-        }}
-        transition={{
-          duration: 1.4,
-          delay: delay + 0.4,
-        }}
-        className={`absolute ${
-          filled ? "bg-white/30" : "bg-[#EF233C]"
-        }`}
-      />
-
-      <motion.span
-        initial={{
-          opacity: 0,
-          letterSpacing: "0.3em",
-        }}
-        animate={{
-          opacity: 1,
-          letterSpacing: "0em",
-        }}
-        transition={{
-          duration: 0.8,
-          delay: delay + 1.6,
-        }}
-        className="relative z-10 whitespace-nowrap font-bold"
-      >
-        {children}
-      </motion.span>
-    </motion.a>
-  );
-}
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 28,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
 
 export default function DigitalCoreHero() {
   return (
-    <section className="relative z-10 min-h-[720px] flex items-center px-6 pt-28 pb-20 overflow-hidden">
-      <div className="relative max-w-6xl mx-auto w-full flex justify-center text-center">
-        <div className="max-w-4xl mx-auto">
+    <section
+      id="home"
+      className="relative z-10 flex min-h-screen items-center overflow-hidden px-5 pb-20 pt-28 sm:px-8 md:pb-24 md:pt-32"
+    >
+      {/* Soft overlay keeps the background readable */}
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(2,3,4,0.12),rgba(2,3,4,0.34)_70%,#020304_100%)]" />
+
+      <div className="relative mx-auto w-full max-w-[1400px]">
+        <div className="mx-auto max-w-6xl text-center">
+          {/* Small introduction */}
           <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-[#EF233C] uppercase tracking-[0.35em] text-sm mb-5"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{
+              duration: 0.75,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="mb-7 text-sm font-medium tracking-[-0.01em] text-white/55 sm:text-base"
           >
-            CUSTOM WEBSITES • AI SOLUTIONS • DIGITAL EXPERIENCES
+            Independent designer and full-stack developer
           </motion.p>
 
+          {/* Main headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, delay: 0.08 }}
-            className="text-[clamp(3.2rem,8vw,7rem)] leading-[0.9] font-black tracking-[-0.06em] text-white"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{
+              duration: 0.9,
+              delay: 0.08,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="text-[clamp(3.7rem,9vw,8.8rem)] font-semibold leading-[0.88] tracking-[-0.07em] text-white"
           >
-            Premium Websites.
-            <span className="block text-[#EF233C]">
-              Powerful First Impressions.
+            Digital experiences
+            <span className="block text-white/42">
+              built to stand apart.
             </span>
           </motion.h1>
 
+          {/* Supporting description */}
           <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, delay: 0.16 }}
-            className="mt-8 text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{
+              duration: 0.85,
+              delay: 0.16,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="mx-auto mt-9 max-w-2xl text-lg leading-relaxed text-white/55 sm:text-xl md:mt-10 md:text-[22px]"
           >
-            Premium websites, AI-powered products, and digital experiences
-            engineered to help businesses build trust, attract customers, and
-            create lasting impressions online.
+            I design and build premium websites, intelligent platforms, and
+            full-stack products for businesses that care about how their
+            digital presence feels.
           </motion.p>
 
+          {/* Actions */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            className="mt-10 flex flex-wrap justify-center gap-4"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            transition={{
+              duration: 0.85,
+              delay: 0.24,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
-            <TransformButton
+            <a
               href="#projects"
-              filled
-              delay={0.8}
+              className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-white px-7 text-sm font-semibold text-black transition duration-300 hover:scale-[1.025] hover:bg-white/90 active:scale-[0.98] sm:w-auto"
             >
-              View Projects
-            </TransformButton>
+              View selected work
+              <ArrowDown size={16} />
+            </a>
 
-            <TransformButton
+            <a
               href="#booking"
-              delay={1.1}
+              className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-white/15 bg-white/[0.035] px-7 text-sm font-semibold text-white backdrop-blur-xl transition duration-300 hover:scale-[1.025] hover:border-white/25 hover:bg-white/[0.075] active:scale-[0.98] sm:w-auto"
             >
-              Book A Call
-            </TransformButton>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.28 }}
-            className="mt-10 flex flex-wrap justify-center gap-3"
-          >
-            {[
-              "Client-Focused UI",
-              "Frontend Systems",
-              "AI-Powered Builds",
-              "Full-Stack Platforms",
-              "Premium Execution",
-            ].map((item) => (
-              <span
-                key={item}
-                className="px-4 py-2 rounded-full border border-white/10 bg-[#090B0F]/75 text-gray-200 backdrop-blur-xl"
-              >
-                {item}
-              </span>
-            ))}
+              Start a project
+              <ArrowUpRight size={16} />
+            </a>
           </motion.div>
         </div>
+
+        {/* Bottom information row */}
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            duration: 1,
+            delay: 0.55,
+          }}
+          className="mt-20 flex flex-col items-center justify-between gap-5 border-t border-white/[0.08] pt-6 text-center text-xs text-white/35 sm:flex-row sm:text-left md:mt-28"
+        >
+          <p>React · Next.js · Node.js · Python · AI integrations</p>
+
+          <a
+            href="#about"
+            className="inline-flex items-center gap-2 transition hover:text-white/65"
+          >
+            Explore the studio
+            <ArrowDown size={14} />
+          </a>
+        </motion.div>
       </div>
     </section>
   );
